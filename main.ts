@@ -12,6 +12,9 @@ function main(): void {
   if (LINE.trim().length === 0) {
     throw new Error("entry must not be only whitespace");
   }
+  if (LINE !== LINE.trim()) {
+    throw new Error("entry must not start or end with whitespace");
+  }
   if (LINE.includes("\n")) {
     throw new Error("entry must be a single line");
   }
